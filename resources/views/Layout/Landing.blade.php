@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BibiTani</title>
-    <link rel="icon" href="https://flowbite.com/docs/images/logo.svg">
+    <link rel="icon" href="LogoBibitani.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/41.2.1/classic/ckeditor.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<nav class=" bg-white border-gray-200 dark:bg-gray-900">
-<header class="absolute inset-x-0 top-0 z-50">
     <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-      <div class="flex lg:flex-1">
+      <div class="flex lg:flex-1 justify-center">
         <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Your Company</span>
-          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          <span class="sr-only"></span>
+          <img class="h-10 w-auto" src="LogoBibitani.png" alt="">
         </a>
       </div>
       <div class="flex lg:hidden">
@@ -27,17 +25,15 @@
           </svg>
         </button>
       </div>
-      <div class="hidden lg:flex lg:gap-x-12">
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
-        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Berita</a>
+      <div class="lg:flex lg:gap-x-12">
+        <a href="/" class="text-sm font-semibold leading-6 text-gray-900 ">Home</a>
+        <a href="{{route('berita.landing')}}" class="text-sm font-semibold leading-6 text-gray-900">Berita</a>
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Pengajuan</a>
       </div>
-      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+      <div class="hidden lg:flex lg:flex-1 lg:justify-center">
         <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Log in <span aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
-   
-</nav>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
     @yield('content');
 </body>

@@ -9,9 +9,15 @@ export default {
   ],
   theme: {
     extend: {},
+    colors: {
+      'blueish':'#184e77',
+      'greenish':'#3d9970',
+    }
   },
   plugins: [
     require('flowbite/plugin')
   ],
 }
+
+
 
