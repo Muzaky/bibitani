@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('penjadwalan_bantuan', function (Blueprint $table) {
             $table->uuid('id_penjadwalan')->primary();
-            $table->string('id_pengajuan');
-            $table->string('id_kelompoktani');
+            $table->string('judul_pengajuan');
+            $table->string('nama_kelompoktani');
             $table->string('dokumentasi_1')->nullable();
             $table->string('dokumentasi_2')->nullable();
             $table->date('tanggal');

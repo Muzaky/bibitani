@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id_pengajuan')->primary();
             $table->string('judul');
             $table->string('proposal');
-            $table->string('id_kelompoktani');
+            $table->string('nama_kelompoktani');
             $table->integer('status_pengajuan');
             $table->text('keterangan');
             $table->timestamps();

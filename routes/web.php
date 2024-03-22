@@ -13,13 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('LandingBerita.landingberita');
+    return view('landing');
 });
+
+
 
 //Routing Berita
 
 Route::get('berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.list');
+Route::get('landingberita', [App\Http\Controllers\BeritaController::class, 'landing'])->name('berita.landing');
+Route::get('berita/{id_berita}', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.detail');
 Route::get('berita/create', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.create');
 Route::post('berita/store', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.store');
 Route::get('berita/{id_berita}/edit', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.edit');

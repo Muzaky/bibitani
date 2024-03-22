@@ -22,7 +22,7 @@ class MBerita extends Model
         'isi',
         'gambar',
     ] ;
-    public function getData(){
+    static function getData(){
         return DB::table('pemberian_bantuan');
     }
 }
