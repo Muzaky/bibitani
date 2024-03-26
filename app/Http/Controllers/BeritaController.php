@@ -37,13 +37,18 @@ class BeritaController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'judul' => 'required',
-            'isi' => 'required',
-            'gambar' => 'nullable|file|mimes:pdf,jpg,jpeg,svg,png',
+            'judul_informasi' => 'required',
+            'nama_bibit' => 'required',
+            'tgl_awal' => 'required',
+            'tgl_akhir' => 'required',
+            'jumlah_bibit' => 'required',
+            'syarat_ketentuan' => 'required',
+            'kontak_narahubung' => 'required',
+            'gambar_informasi' => 'nullable|file|mimes:pdf,jpg,jpeg,svg,png',
         ]);
-        if ($request->hasFile('gambar')){
-            $imagePath = $request->file('gambar')->store('berita', 'public');
-            $validatedData['gambar'] = $imagePath;
+        if ($request->hasFile('gambar_informasi')){
+            $imagePath = $request->file('gambar_informasi')->store('informasi', 'public');
+            $validatedData['gambar_informasi'] = $imagePath;
         }
         MBerita::create($validatedData);
         return redirect()->route('berita.list');
@@ -77,4 +82,6 @@ class BeritaController extends Controller
         return redirect()->route('berita.list')
             ->with('success','Berita telah didelete');
     }
+
+    
 }

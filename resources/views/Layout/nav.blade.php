@@ -10,7 +10,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+    <nav class="flex items-center justify-between p-6 lg:px-8 mx" aria-label="Global">
       <div class="flex lg:flex-1">
         <a href="#" class="-m-1.5 p-1.5"> 
           <span class="sr-only">Your Company</span>
@@ -27,20 +27,6 @@
         <a href="#" class="flex justify-center text-sm font-semibold leading-6 text-gray-900" style="font-size:20px; width: 128px; height:44px;background-color:#f4f4f4; color:#204E51; align-items: center;border-radius:8px; border :1px solid #204E51">Sign Up</a>
       </div>
     </nav>
-    <!--
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>

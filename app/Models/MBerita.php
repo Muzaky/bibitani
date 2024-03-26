@@ -17,12 +17,21 @@ class MBerita extends Model
 
     protected $primaryKey = "id_berita";
     protected $fillable = [
-        "id_berita",
-        'judul',
-        'isi',
-        'gambar',
+        "id_informasi",
+        'judul_informasi',
+        'nama_bibit',
+        'gambar_informasi',
+        'tgl_awal',
+        'tgl_akhir',
+        'jumlah_bibit',
+        'syarat_ketentuan',
+        'kontak_narahubung',
     ] ;
     static function getData(){
-        return DB::table('pemberian_bantuan');
+        return DB::table('informasi');
+    }
+
+    public static function getDyId($id_informasi){
+        return static::find($id_informasi);
     }
 }
