@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id_informasi')->primary();
             $table->string('judul_informasi');
             $table->string('nama_bibit');
-            $table->string('gambar_informasi');
+            $table->string('gambar_informasi')->nullable();
             $table->date('tgl_awal');
             $table->date('tgl_akhir');
             $table->integer('jumlah_bibit');

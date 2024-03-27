@@ -13,9 +13,9 @@ class MBerita extends Model
 
     protected $guarded = [];
 
-    protected $table = 'pemberian_bantuan';
+    protected $table = 'informasi';
 
-    protected $primaryKey = "id_berita";
+    protected $primaryKey = "id_informasi";
     protected $fillable = [
         "id_informasi",
         'judul_informasi',
