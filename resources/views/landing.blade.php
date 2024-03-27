@@ -21,7 +21,7 @@
 <body>
     <nav class="flex items-center justify-between p-6 lg:px-8 mx" aria-label="Global">
       <div class="flex lg:flex-1">
-        <a href="#" class="-m-1.5 p-1.5"> 
+        <a href="/" class="-m-1.5 p-1.5"> 
           <span class="sr-only">Your Company</span>
           <img class="" style="width: 270;height:86px" src="bibitani.ico" alt="logobibitani">
         </a>

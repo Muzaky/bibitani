@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('Berita.data_list');
+    return view('landing');
 });
 
 
@@ -36,12 +36,12 @@ Route::get('berita/{id_berita}/destroy', [App\Http\Controllers\BeritaController:
 
 //Routing Dinas Dashboard
 
-Route::get('berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.list');
-Route::get('landingdinas', [App\Http\Controllers\BeritaController::class, 'landing'])->name('berita.landing');
-Route::get('berita/{id_berita}', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.detail');
-Route::get('berita/create', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.create');
-Route::post('berita/store', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.store');
-Route::get('berita/{id_berita}/edit', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.edit');
-Route::put('berita/{id_berita}/update', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.update');
-Route::get('berita/{id_berita}/destroy', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.destroy');
+// Route::get('berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.list');
+// Route::get('landingdinas', [App\Http\Controllers\BeritaController::class, 'landing'])->name('berita.landing');
+// Route::get('berita/{id_berita}', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.detail');
+// Route::get('berita/create', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.create');
+// Route::post('berita/store', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.store');
+// Route::get('berita/{id_berita}/edit', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.edit');
+// Route::put('berita/{id_berita}/update', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.update');
+// Route::get('berita/{id_berita}/destroy', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.destroy');
 

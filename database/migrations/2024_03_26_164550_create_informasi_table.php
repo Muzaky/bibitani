@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('kontak_narahubung');
             $table->timestamps();
             $table->softDeletes();
+            
         });
     }
 

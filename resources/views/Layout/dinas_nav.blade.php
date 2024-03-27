@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Heroicons -->
     <link href="https://cdn.jsdelivr.net/npm/@heroicons/react/outline.min.css" rel="stylesheet">
 </head>
@@ -14,10 +15,12 @@
     <!-- Sidebar -->
     <div class="h-screen flex overflow-hidden bg-gray-100">
         <!-- Sidebar -->
-        <div class="bg-transparent 0 w-64 overflow-y-auto">
-            <div class="py-4 px-6">
-                <!-- Sidebar branding -->
-                <h2 class="text-grey-800 text-xl font-bold mb-8 ">Admin Dashboard</h2>
+        <div class="flex flex-col bg-transparent 0 w-80">
+            <div class="flex justify-center items-center">
+                <img class="w-[250px] h-[94px] mt-[32px] mb-[88px]" src="bibitani.ico" alt="logobibitani">
+            </div>
+
+            <div class="">
                 <!-- Sidebar links -->
                 <ul class="space-y-2">
                     <li>
@@ -28,12 +31,12 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
-                            <span>Dashboard</span>
+                            <span >Dashboard</span>
                         </a>
                     </li>
                     <li>
                         <a href="#"
-                            class="text-gray-800 hover:bg-gray-800 hover:text-white block px-4 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
+                            class="text-gray-800 hover:bg-gray-800 hover:text-white  px-4 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
                             <svg class="h-6 w-6 text-gray-800" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -44,7 +47,7 @@
                     </li>
                     <li>
                         <a href="#"
-                            class="text-gray-800 hover:bg-gray-800 hover:text-white block px-4 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
+                            class="text-gray-800 hover:bg-gray-800 hover:text-white  px-4 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
                             <svg class="h-6 w-6 text-gray-800" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -58,21 +61,25 @@
         </div>
 
         <!-- Content area -->
-        <div class="flex flex-col w-0 flex-1 overflow-hidden">
+        <div class="flex flex-col w-0 flex-1 overflow-hidden bg-[#00B074] bg-opacity-5">
             <!-- Top bar -->
-            <div class="relative z-10 flex-shrink-0 flex h-16 bg-white border-b border-gray-200 shadow">
+            <div class="flex h-[44px] items-center mt-[63px]">
                 <!-- Top bar content -->
-                <button
-                    class="px-4 border-r border-gray-200 text-gray-500 focus:outline-none focus:bg-gray-100 focus:text-gray-600 md:hidden">
-                    <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+                <form class="flex w-[614px] h-auto bg-white rounded-[8px] mx-[12px] items-center" action="GET">
+                    <label for="search_field"></label>
+                    <div class="relative w-full text-gray-400 focus-within:text-gray-600">
+                        <input id="search_field"
+                            class="block w-full h-full  px-[12px] py-[14px] rounded-md border border-transparent bg-gray-200 focus:outline-none focus:bg-white focus:border-gray-300 text-gray-900 placeholder-gray-500 sm:text-sm"
+                            placeholder="Cari disini" type="search">
+                    </div>
+
+
+                </form>
                 <div class="flex-1 px-4 flex justify-between">
                     <div class="flex-1 flex">
                     </div>
-                    <div class="ml-4 flex items-center md:ml-6">
+
+                    {{-- <div class="ml-4 flex items-center md:ml-6">
                         <!-- Profile dropdown -->
                         <div class="ml-3 relative">
                             <div>
@@ -83,7 +90,7 @@
                                 </button>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
 
