@@ -83,13 +83,10 @@
                             Syarat dan Ketentuan
                         </label>
 
-                        <textarea class="flex w-full" name="editor1"></textarea>
+                        <textarea name="syarat_ketentuan" id="syarat_ketentuan"></textarea>
                         <script>
-                            CKEDITOR.replace('editor1');
+                            CKEDITOR.replace('syarat_ketentuan');
                         </script>
-
-
-
                         <button type="submit" class="flex">
                             Simpan
                         </button>

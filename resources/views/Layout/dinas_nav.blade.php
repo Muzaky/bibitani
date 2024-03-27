@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
     <link rel="stylesheet"
         href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
-        <script src="https://cdn.ckeditor.com/4.24.0-lts/standard/ckeditor.js"></script>
+        <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 </head>
 
 <body class="bg-gray-100">
@@ -21,7 +21,7 @@
         <!-- Sidebar -->
         <div class="flex flex-col bg-transparent 0 w-80">
             <div class="flex justify-center items-center">
-                <img class="w-[250px] h-[86px] mt-[32px] mb-[88px]" src="bibitani.ico" alt="logobibitani">
+                <img class="w-[250px] h-[86px] mt-[32px] mb-[88px]" src="../bibitani.ico" alt="logobibitani">
             </div>
 
             <div class="">
@@ -30,19 +30,19 @@
                     <li>
                         <a href="#"
                             class="text-gray-800 hover:bg-gray-800 hover:text-white  px-4 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
-                            <svg class="h-6 w-6 text-gray-800" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="h-6 w-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
-                            <span >Dashboard</span>
+                            <span>Dashboard</span>
                         </a>
                     </li>
                     <li>
                         <a href="#"
                             class="text-gray-800 hover:bg-gray-800 hover:text-white  px-4 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
-                            <svg class="h-6 w-6 text-gray-800" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="h-6 w-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
@@ -52,8 +52,8 @@
                     <li>
                         <a href="#"
                             class="text-gray-800 hover:bg-gray-800 hover:text-white  px-4 py-2 rounded-md text-sm font-medium flex items-center space-x-2">
-                            <svg class="h-6 w-6 text-gray-800" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="h-6 w-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
@@ -99,17 +99,26 @@
             </div>
 
             <!-- Main content area -->
-            <div class="flex-1 relative z-0 overflow-y-auto focus:outline-none w-[1400px] justify-center" tabindex="0">
+            <div class="flex-1 relative z-0 overflow-y-auto focus:outline-none w-[1400px] justify-center"
+                tabindex="0">
                 <!-- Your content goes here -->
-                
+
                 <div class="flex justify-center mt-8">
-                    
-                    
+
+
                     @yield('content')
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://cdn.ckeditor.com/4.24.0-lts/standard/ckeditor.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
 </body>
+
 
 </html>
