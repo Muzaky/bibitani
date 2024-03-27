@@ -30,6 +30,8 @@ class BeritaController extends Controller
         );
     }
 
+    // public function show()
+
     public function create()
     {
         return view('Berita.create');

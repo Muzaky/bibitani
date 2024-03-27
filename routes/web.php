@@ -24,10 +24,10 @@ Route::get('dashboard', [App\Http\Controllers\DinasController::class, 'index'])-
 
 //Routing Berita
 
-Route::get('berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.list');
+Route::get('berita_list', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.list');
 Route::get('landingberita', [App\Http\Controllers\BeritaController::class, 'landing'])->name('berita.landing');
-Route::get('berita/{id_berita}', [App\Http\Controllers\BeritaController::class, 'show'])->name('berita.detail');
-Route::get('berita/create', [App\Http\Controllers\BeritaController::class, 'create'])->name('berita.create');
+// Route::get('berita/{id_berita}', [App\Http\Controllers\BeritaController::class, 'show'])->name('berita.detail');
+Route::get('berita_list/create', [App\Http\Controllers\BeritaController::class, 'create'])->name('berita.create');
 Route::post('berita/store', [App\Http\Controllers\BeritaController::class, 'store'])->name('berita.store');
 Route::get('berita/{id_berita}/edit', [App\Http\Controllers\BeritaController::class, 'edit'])->name('berita.edit');
 Route::put('berita/{id_berita}/update', [App\Http\Controllers\BeritaController::class, 'update'])->name('berita.update');

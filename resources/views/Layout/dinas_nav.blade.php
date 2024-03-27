@@ -9,6 +9,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Heroicons -->
     <link href="https://cdn.jsdelivr.net/npm/@heroicons/react/outline.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://demos.creative-tim.com/notus-js/assets/styles/tailwind.css">
+    <link rel="stylesheet"
+        href="https://demos.creative-tim.com/notus-js/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css">
+        <script src="https://cdn.ckeditor.com/4.24.0-lts/standard/ckeditor.js"></script>
 </head>
 
 <body class="bg-gray-100">
@@ -17,7 +21,7 @@
         <!-- Sidebar -->
         <div class="flex flex-col bg-transparent 0 w-80">
             <div class="flex justify-center items-center">
-                <img class="w-[250px] h-[94px] mt-[32px] mb-[88px]" src="bibitani.ico" alt="logobibitani">
+                <img class="w-[250px] h-[86px] mt-[32px] mb-[88px]" src="bibitani.ico" alt="logobibitani">
             </div>
 
             <div class="">
@@ -42,7 +46,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
-                            <span>Users</span>
+                            <span>Informasi</span>
                         </a>
                     </li>
                     <li>
@@ -53,7 +57,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
-                            <span>Settings</span>
+                            <span>Pengajuan</span>
                         </a>
                     </li>
                 </ul>
@@ -61,9 +65,9 @@
         </div>
 
         <!-- Content area -->
-        <div class="flex flex-col w-0 flex-1 overflow-hidden bg-[#00B074] bg-opacity-5">
+        <div class="flex flex-col w-0 flex-1 overflow-hidden bg-[#00B074] bg-opacity-5 items-center">
             <!-- Top bar -->
-            <div class="flex h-[44px] items-center mt-[63px]">
+            <div class="flex h-[44px] justify-center items-center content-center mt-[63px]">
                 <!-- Top bar content -->
                 <form class="flex w-[614px] h-auto bg-white rounded-[8px] mx-[12px] items-center" action="GET">
                     <label for="search_field"></label>
@@ -95,10 +99,10 @@
             </div>
 
             <!-- Main content area -->
-            <div class="flex-1 relative z-0 overflow-y-auto focus:outline-none" tabindex="0">
+            <div class="flex-1 relative z-0 overflow-y-auto focus:outline-none w-[1400px] justify-center" tabindex="0">
                 <!-- Your content goes here -->
                 
-                <div class="flex justify-center m-8">
+                <div class="flex justify-center mt-8">
                     
                     
                     @yield('content')
