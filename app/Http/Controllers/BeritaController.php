@@ -56,30 +56,30 @@ class BeritaController extends Controller
         return redirect()->route('berita.list');
     }
 
-    public function edit(Request $request, $id_berita)
+    public function edit(Request $request, $id_informasi)
     {
-        $data = MBerita::getById($id_berita);
+        $data = MBerita::getById($id_informasi);
         // dd($data);
         return view(
             'Berita.edit',
             compact('data')
         );
     }
-    public function update(Request $request, $id_berita)
+    public function update(Request $request, $id_informasi)
     {
         $validatedData = $request->validate([
             'judul',
             'isi',
             'gambar',
         ]);
-        $update = MBerita::getById($id_berita);
+        $update = MBerita::getById($id_informasi);
         $update->update($validatedData);
         return redirect()->route('berita.list')
             ->with('success', 'Berita telah terpost');
     }
-    public function destroy($id_berita)
+    public function destroy($id_informasi)
     {
-        $destroy = MBerita::getById($id_berita);
+        $destroy = MBerita::getById($id_informasi);
         $destroy->delete();
         return redirect()->route('berita.list')
             ->with('success','Berita telah didelete');

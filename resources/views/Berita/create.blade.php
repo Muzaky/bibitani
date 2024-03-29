@@ -1,19 +1,19 @@
 @extends('Layout.dinas_nav')
 @section('content')
-    <section class=" py-1  mt-4">
-        <div class="flex flex-col">
-            <div
-                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
-                <div class="flex-auto px-4 lg:px-10 py-10 pt-0 ">
-                    <form class="flex justify-center items-center flex-col" action="{{ route('berita.store') }}" method="POST">
-                        @csrf
-                        <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
-                            Tabel Informasi
-                        </h6>
-                        <div class="flex flex-wrap">
-                            <div class="w-full lg:w-6/12 px-4">
-                                <div class="relative w-full mb-3">
-                                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+<section class=" py-1  mt-4">
+    <div class="flex flex-col">
+        <div
+        class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+        <div class="flex-auto px-4 lg:px-10 py-10 pt-0 ">
+            <form class="flex justify-center items-center flex-col" action="{{ route('berita.store') }}" method="POST">
+                @csrf
+                <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                    Tabel Informasi
+                </h6>
+                <div class="flex flex-wrap">
+                    <div class="w-full lg:w-6/12 px-4">
+                        <div class="relative w-full mb-3">
+                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                         htmlfor="grid-password">
                                         Judul Informasi
                                     </label>
@@ -39,9 +39,9 @@
                                         htmlfor="grid-password">
                                         Gambar
                                     </label>
-                                    <input type="file" name="gambar_infomrasi" id="gambar_informasi"
+                                    <input type="text" name="gambar_informasi" id="gambar_informasi"
                                         class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                                        value="" placeholder="Masukkan Nama Bibit">
+                                        value="" placeholder="Masukkan Gambar">
                                 </div>
                             </div>
                             <div class="w-full lg:w-6/12 px-4">

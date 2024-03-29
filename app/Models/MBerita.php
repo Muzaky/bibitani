@@ -31,7 +31,7 @@ class MBerita extends Model
         return DB::table('informasi');
     }
 
-    public static function getDyId($id_informasi){
+    public static function getById($id_informasi){
         return static::find($id_informasi);
     }
 }
