@@ -92,7 +92,7 @@
 
                         </div>
                         <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
-                            Syarat dan Ketentuan
+                            Syarat dan Ketentuan test
                         </label>
 
                         <textarea name="syarat_ketentuan" id="syarat_ketentuan"></textarea>
