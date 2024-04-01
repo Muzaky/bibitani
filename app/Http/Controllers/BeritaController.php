@@ -38,7 +38,7 @@ class BeritaController extends Controller
     }
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'judul_informasi' => 'required',
             'nama_bibit' => 'required',
             'tgl_awal' => 'required',
@@ -46,13 +46,38 @@ class BeritaController extends Controller
             'jumlah_bibit' => 'required',
             'syarat_ketentuan' => 'required',
             'kontak_narahubung' => 'required',
-            'gambar_informasi' => 'nullable|file|mimes:pdf,jpg,jpeg,svg,png',
+            // 'gambar_informasi' => 'file|mimes:pdf,jpg,jpeg,svg,png',
         ]);
-        if ($request->hasFile('gambar_informasi')){
-            $imagePath = $request->file('gambar_informasi')->store('informasi', 'public');
-            $validatedData['gambar_informasi'] = $imagePath;
+        // if ($request->hasFile('gambar_informasi')){
+        //     $imagePath = $request->file('gambar_informasi')->store('informasi', 'public');
+        //     $validatedData['gambar_informasi'] = $imagePath;
+        // }
+        if ($request->gambar_informasi == "") {
+            DB::table("informasi")->insert([
+                'judul_informasi' => $request->judul_informasi,
+                'nama_bibit' => $request->nama_bibit,
+                'tgl_awal' => $request->tgl_awal,
+                'tgl_akhir' => $request->tgl_akhir,
+                'jumlah_bibit' => $request->jumlah_bibit,
+                'syarat_ketentuan' => $request->syarat_ketentuan,
+                'kontak_narahubung' => $request->kontak_narahubung,
+            ]);
+        } else {
+            $file = $request->file('gambar_informasi');
+            $nama_file = $request->judul_informasi . '.' . $file->extension();
+            $file->move('img', $nama_file);
+            DB::table("informasi")->insert([
+                'judul_informasi' => $request->judul_informasi,
+                'nama_bibit' => $request->nama_bibit,
+                'tgl_awal' => $request->tgl_awal,
+                'tgl_akhir' => $request->tgl_akhir,
+                'jumlah_bibit' => $request->jumlah_bibit,
+                'syarat_ketentuan' => $request->syarat_ketentuan,
+                'kontak_narahubung' => $request->kontak_narahubung,
+                'gambar_informasi' => $nama_file,
+            ]);
         }
-        MBerita::create($validatedData);
+        
         return redirect()->route('berita.list');
     }
 

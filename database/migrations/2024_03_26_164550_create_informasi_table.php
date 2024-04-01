@@ -12,15 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('informasi', function (Blueprint $table) {
-            $table->uuid('id_informasi')->primary();
-            $table->string('judul_informasi');
-            $table->string('nama_bibit');
+            $table->increments('id_informasi');
+            $table->string('judul_informasi')->nullable();
+            $table->string('nama_bibit')->nullable();
             $table->string('gambar_informasi')->nullable();
-            $table->date('tgl_awal');
-            $table->date('tgl_akhir');
-            $table->integer('jumlah_bibit');
-            $table->text('syarat_ketentuan');
-            $table->string('kontak_narahubung');
+            $table->date('tgl_awal')->nullable();
+            $table->date('tgl_akhir')->nullable();
+            $table->integer('jumlah_bibit')->nullable();
+            $table->text('syarat_ketentuan')->nullable();
+            $table->string('kontak_narahubung')->nullable();
             $table->timestamps();
             $table->softDeletes();
             
