@@ -30,8 +30,10 @@ Route::get('landingberita', [App\Http\Controllers\BeritaController::class, 'land
 Route::get('berita_list/create', [App\Http\Controllers\BeritaController::class, 'create'])->name('berita.create');
 Route::post('berita/store', [App\Http\Controllers\BeritaController::class, 'store'])->name('berita.store');
 Route::get('berita/{id_berita}/edit', [App\Http\Controllers\BeritaController::class, 'edit'])->name('berita.edit');
+// Route::get('berita/edit', [App\Http\Controllers\BeritaController::class, 'edit'])->name('berita.edit');
 Route::put('berita/{id_berita}/update', [App\Http\Controllers\BeritaController::class, 'update'])->name('berita.update');
-Route::delete('berita/{id_berita}/destroy', [App\Http\Controllers\BeritaController::class, 'destroy'])->name('berita.destroy');
+// Route::delete('berita/{id_berita}/destroy', [App\Http\Controllers\BeritaController::class, 'destroy'])->name('berita.destroy');
+Route::delete('berita_list/{id}', [App\Http\Controllers\BeritaController::class, 'destroy'])->name('berita.destroy');
 
 
 //Routing Dinas Dashboard
