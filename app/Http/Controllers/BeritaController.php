@@ -36,50 +36,83 @@ class BeritaController extends Controller
     {
         return view('Berita.create');
     }
-    public function store(Request $request)
-    {
-        $request->validate([
-            'judul_informasi' => 'required',
-            'nama_bibit' => 'required',
-            'tgl_awal' => 'required',
-            'tgl_akhir' => 'required',
-            'jumlah_bibit' => 'required',
-            'syarat_ketentuan' => 'required',
-            'kontak_narahubung' => 'required',
-            'gambar_informasi' => 'file|mimes:pdf,jpg,jpeg,svg,png',
-        ]);
-        // if ($request->hasFile('gambar_informasi')){
-        //     $imagePath = $request->file('gambar_informasi')->store('informasi', 'public');
-        //     $validatedData['gambar_informasi'] = $imagePath;
-        // }
-        if ($request->gambar_informasi == "") {
-            DB::table("informasi")->insert([
-                'judul_informasi' => $request->judul_informasi,
-                'nama_bibit' => $request->nama_bibit,
-                'tgl_awal' => $request->tgl_awal,
-                'tgl_akhir' => $request->tgl_akhir,
-                'jumlah_bibit' => $request->jumlah_bibit,
-                'syarat_ketentuan' => $request->syarat_ketentuan,
-                'kontak_narahubung' => $request->kontak_narahubung,
-            ]);
-        } else {
-            $file = $request->file('gambar_informasi');
-            $nama_file = $file->getClientOriginalName();
-            $file->move('img', $nama_file);
-            DB::table("informasi")->insert([
-                'judul_informasi' => $request->judul_informasi,
-                'nama_bibit' => $request->nama_bibit,
-                'tgl_awal' => $request->tgl_awal,
-                'tgl_akhir' => $request->tgl_akhir,
-                'jumlah_bibit' => $request->jumlah_bibit,
-                'syarat_ketentuan' => $request->syarat_ketentuan,
-                'kontak_narahubung' => $request->kontak_narahubung,
-                'gambar_informasi' => $nama_file,
-            ]);
-        }
+    // public function store(Request $request)
+    // {
+    //     $request->validate([
+    //         'judul_informasi' => 'required',
+    //         'nama_bibit' => 'required',
+    //         'tgl_awal' => 'required',
+    //         'tgl_akhir' => 'required',
+    //         'jumlah_bibit' => 'required',
+    //         'syarat_ketentuan' => 'required',
+    //         'kontak_narahubung' => 'required',
+    //         'gambar_informasi' => 'file|mimes:pdf,jpg,jpeg,svg,png',
+    //     ]);
+    //     // if ($request->hasFile('gambar_informasi')){
+    //     //     $imagePath = $request->file('gambar_informasi')->store('informasi', 'public');
+    //     //     $validatedData['gambar_informasi'] = $imagePath;
+    //     // }
+    //     if ($request->gambar_informasi == "") {
+    //         DB::table("informasi")->insert([
+    //             'judul_informasi' => $request->judul_informasi,
+    //             'nama_bibit' => $request->nama_bibit,
+    //             'tgl_awal' => $request->tgl_awal,
+    //             'jumlah_bibit' => $request->jumlah_bibit,
+    //             'syarat_ketentuan' => $request->syarat_ketentuan,
+    //             'kontak_narahubung' => $request->kontak_narahubung,
+    //         ]);
+    //     } else {
+    //         $file = $request->file('gambar_informasi');
+    //         $nama_file = $file->getClientOriginalName();
+    //         $file->move('img', $nama_file);
+    //         DB::table("informasi")->insert([
+    //             'judul_informasi' => $request->judul_informasi,
+    //             'nama_bibit' => $request->nama_bibit,
+    //             'tgl_awal' => $request->tgl_awal,
+    //             'tgl_akhir' => $request->tgl_akhir,
+    //             'jumlah_bibit' => $request->jumlah_bibit,
+    //             'syarat_ketentuan' => $request->syarat_ketentuan,
+    //             'kontak_narahubung' => $request->kontak_narahubung,
+    //             'gambar_informasi' => $nama_file,
+    //         ]);
+    //     }
         
-        return redirect()->route('berita.list');
+    //     return redirect()->route('berita.list');
+    // }
+    public function store(Request $request)
+{
+    $request->validate([
+        'judul_informasi' => 'required',
+        'nama_bibit' => 'required',
+        'tgl_awal' => 'required',
+        'tgl_akhir' => 'required',
+        'jumlah_bibit' => 'required',
+        'syarat_ketentuan' => 'required',
+        'kontak_narahubung' => 'required',
+        'gambar_informasi' => 'file|mimes:pdf,jpg,jpeg,svg,png',
+    ]);
+
+    $data = [
+        'judul_informasi' => $request->judul_informasi,
+        'nama_bibit' => $request->nama_bibit,
+        'tgl_awal' => $request->tgl_awal,
+        'tgl_akhir' => $request->tgl_akhir,
+        'jumlah_bibit' => $request->jumlah_bibit,
+        'syarat_ketentuan' => $request->syarat_ketentuan,
+        'kontak_narahubung' => $request->kontak_narahubung,
+    ];
+
+    if ($request->hasFile('gambar_informasi')) {
+        $file = $request->file('gambar_informasi');
+        $nama_file = $file->getClientOriginalName();
+        $file->move('img', $nama_file);
+        $data['gambar_informasi'] = $nama_file;
     }
+
+    MBerita::create($data);
+
+    return redirect()->route('berita.list');
+}
 
     public function edit(Request $request, $id_informasi)
     {

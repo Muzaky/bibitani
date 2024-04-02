@@ -1,79 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body
-class="bg-gray-200 flex justify-center items-center h-screen select-none"
->
+@extends('Layout.dinas_nav')
+@section('content')
+<section class=" py-1  mt-4">
+    <div class="flex flex-col"
+    id="editbutton">
+        <div
+        class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+        <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+            <form class="flex justify-center items-center flex-col" action="{{ route('berita.edit', $data->id_informasi)  }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                    Tabel Informasi
+                </h6>
+                <div class="flex flex-wrap">
+                    <div class="w-full lg:w-6/12 px-4">
+                        <div class="relative w-full mb-3">
+                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                        htmlfor="grid-password">
+                                        Judul Informasi
+                                    </label>
+                                    <input id="judul_informasi" name="judul_informasi" type="text"
+                                        class="border-0 px-3 py-2.5 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                        value="{{ $data->judul_informasi }}" placeholder="Masukkan Judul">
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-6/12 px-4">
+                                <div class="relative w-full mb-3">
+                                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                        htmlfor="grid-password">
+                                        Nama Bibit
+                                    </label>
+                                    <input type="text" name="nama_bibit" id="nama_bibit"
+                                        class="border-0 px-3 py-2.5 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                        value="{{ $data->nama_bibit }}" placeholder="Masukkan Nama Bibit">
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-6/12 px-4">
+                                <div class="relative w-full mb-3">
+                                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                        htmlfor="grid-password">
+                                        Gambar
+                                    </label>
+                                    <input type="file" name="gambar_informasi" id="gambar_informasi"
+                                        class="border-0 px-3  placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                        value="{{ $data->gambar_informasi }}"
+                                        placeholder="Masukkan Gambar">
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-6/12 px-4">
+                                <div class="relative w-full mb-3">
+                                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                        htmlfor="grid-password">
+                                        Tanggal Mulai
+                                    </label>
+                                    <input type="date" id="tgl_awal" name="tgl_awal"
+                                        class="border-0 px-3 py-2.5 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                        value="{{ $data->tgl_awal }}" placeholder="Masukkan Tanggal Awal">
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-6/12 px-4">
+                                <div class="relative w-full mb-3">
+                                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                        htmlfor="grid-password">
+                                        Tanggal Akhir
+                                    </label>
+                                    <input type="date" id="tgl_akhir" name="tgl_akhir"
+                                        class="border-0 px-3 py-2.5 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                        value="{{ $data->tgl_akhir }}" placeholder="Masukkan Tanggal Akhir">
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-6/12 px-4">
+                                <div class="relative w-full mb-3">
+                                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                        htmlfor="grid-password">
+                                        Jumlah Bibit
+                                    </label>
+                                    <input type="number" name="jumlah_bibit" id="jumlah_bibit"
+                                        class="border-0 px-3 py-2.5 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                        value="{{ $data->jumlah_bibit }}" placeholder="Masukkan Jumlah Bibit">
+                                </div>
+                            </div>
+                            <div class="w-full lg:w-6/12 px-4">
+                                <div class="relative w-full mb-3">
+                                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                        htmlfor="grid-password">
+                                        Narahubung
+                                    </label>
+                                    <input type="text" name="kontak_narahubung" id="kontak_narahubung"
+                                        class="border-0 px-3 py-2.5 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                                        value="{{ $data->kontak_narahubung }}" placeholder="Masukkan Narahubung">
+                                </div>
+                            </div>
 
-<button class="bg-white">Open Modal
-</button>
-<div
-id="delbutton" 
-class="fixed left-0 top-0 bg-black bg-opacity-40 w-screen h-screen flex items-center justify-center opacity-0 
-hidden transition-opacity duration-500">
-    <div class="bg-white rounded shadow-md p-8 w-[25%] gap-5 flex-col overflow-hidden bg-opacity-0">
-        <div class="flex p-8 gap-5 pb-0">
-            <div class="bg-red-500 rounded-full text-red-600 min-w-10 h-10 flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke-width="1.5" 
-                stroke="currentColor" 
-                class="w-6 h-6">
-                <path 
-                stroke-linecap="round" 
-                stroke-linejoin="round" 
-                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
-                </svg>
-            </div>
-    
-            <div class="flex-grow">
-                <h1 class="font-bold text-lg mb-2 text-gray-700">Menghapus Data</h1>
-                <p class="text-gray-600">Apakah anda ingin menghapus data ?</p>
+
+                        </div>
+                        <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlfor="grid-password">
+                            Syarat dan Ketentuan test
+                        </label>
+
+                        <textarea name="syarat_ketentuan" id="syarat_ketentuan">{{ $data->syarat_ketentuan }}
+                            
+                        </textarea>
+                        <script>
+                            CKEDITOR.replace('syarat_ketentuan');
+                        </script>
+                        <button type="submit" class="flex">
+                            Simpan
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
 
-        <div class="bg-gray-200 py-3 px-6 justify-end">
-            <button class="bg-white rounded px-4 py-2 text-black cursor-pointer hover:bg-gray-300">Batal</button>
-            <button class="bg-red-700 rounded px-4 py-2 text-white cursor-pointer hover:bg-red-400">Hapus</button>
-        </div>
-        
-    </div>
 
-    </div>
-    
+        <script>
+           
 
-   
+        </script>
+    </section>
 
-
-
-
-
-</div>
-
-<script>
-    function showDelButton(){
-        let delbutton = document.getElementById('delbutton')
-        delbutton.classList.remove('hidden')
-        delbutton.classList.add('flex')
-        setTimeout(() => {
-            delbutton.classList.add('opacity-100')
-        }, 20);
-    }
-    function hideDelButton(){
-        let delbutton = document.getElementById('delbutton')
-        delbutton.classList.add('opacity-0')
-        setTimeout(() => {
-            delbutton.classList.add('hidden')
-            delbutton.classList.remove('flex')
-        }, 500);
-    }
-</script>
-    
-</body>
-</html>
+@endsection

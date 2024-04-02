@@ -63,13 +63,13 @@
                                 </td>
                                 <td class="tb-col tb-col-md justify-center text-center">
                                     <div class="px-2 py-1 fs-6 lh-sm object-fill">
-                                        <a href="{{ asset('img/'. $val->gambar_informasi) }}">
+                                        <a href="{{ asset('img/' . $val->gambar_informasi) }}">
                                             {{ basename($val->gambar_informasi) }}
 
                                         </a>
                                         {{-- <img --}}
-                                            {{-- src="{{ asset('img' . '/' . $val->gambar_informasi) }}" alt=""> --}}
-                                        </div>
+                                        {{-- src="{{ asset('img' . '/' . $val->gambar_informasi) }}" alt=""> --}}
+                                    </div>
                                 </td>
                                 <td class="tb-col tb-col-md justify-center text-center">
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $val->tgl_awal }}</div>
@@ -87,6 +87,19 @@
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $val->kontak_narahubung }}</div>
                                 </td>
                                 <td class="tb-col tb-col-md px-6 py-4 flex gap-x-3">
+                                    {{-- <button id="edit-form" action="{{ route('berita.edit', $val->id_informasi) }}">
+                                        
+                                        <button onclick="showeditButton({{ $val->id_informasi }})"
+                                        class="font-medium text-lg bg-transparent rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-green-600">
+                                            <i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                                    strokeWidth={1.5} stroke="currentColor" class="w-6 h-6">
+                                                    <path strokeLinecap="round" strokeLinejoin="round"
+                                                        d="M10.5 6h9.75M10.5 6a1.5 1.5 0 1 1-3 0m3 0a1.5 1.5 0 1 0-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m-9.75 0h9.75" />
+                                                </svg>
+                                            </i>
+                                        </button>
+                                    </button> --}}
                                     <a href="{{ route('berita.edit', $val->id_informasi) }}"
                                         class="font-medium text-lg bg-transparent rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-green-600"><i>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -102,7 +115,7 @@
                                             class="font-medium text-lg bg-transparent rounded-md border-t-2 border-l-2 border-b-4 border-r-4 border-red-600">
                                             <i>
                                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                    strokeWidth={1.5} stroke="currentColor" class="w-6 h-6">
+                                                    strokeWidth="1.5" stroke="currentColor" class="w-6 h-6">
                                                     <path strokeLinecap="round" strokeLinejoin="round"
                                                         d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" />
                                                 </svg>
@@ -149,6 +162,9 @@
         </div>
 
         <!--Modal Script Edit Button-->
+        
+        {{-- @extends('Berita.edit') --}}
+
 
 
         <script>
@@ -164,6 +180,8 @@
 
             }
 
+            
+
             function hideDelButton() {
                 let delbutton = document.getElementById('delbutton')
                 delbutton.classList.add('opacity-0')
@@ -171,6 +189,17 @@
                     delbutton.classList.add('hidden')
                     delbutton.classList.remove('flex')
                 }, 500);
+            }
+
+            function showeditButton(id) {
+                let delbutton = document.getElementById('editbutton')
+                document.getElementById('editForm').action = "{{ route('berita.edit', '') }}/" + id;
+
+                delbutton.classList.remove('hidden')
+                delbutton.classList.add('flex')
+                setTimeout(() => {
+                    delbutton.classList.add('opacity-100')
+                }, 20);
             }
         </script>
     </section>

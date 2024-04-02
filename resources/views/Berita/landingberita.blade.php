@@ -20,8 +20,12 @@
           </div>
         </div>
 
+        @foreach ($data as $val)
+
+
+
         <div class="mb-6 mr-auto w-full shrink-0 grow-0 basis-auto px-3 md:mb-0 md:w-9/12 xl:w-7/12">
-          <h5 class="mb-3 text-lg font-bold">Welcome to California</h5>
+          <h5 class="mb-3 text-lg font-bold">{{ $val->judul_informasi }}</h5>
           <div
             class="mb-3 flex items-center justify-center text-sm font-medium text-danger dark:text-danger-500 md:justify-start">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
@@ -32,7 +36,7 @@
             Travels
           </div>
           <p class="mb-6 text-neutral-500 dark:text-neutral-300">
-            <small>Published <u>13.01.2022</u> by
+            <small>Published <u>{{ $val->tgl_awal }}</u> by
               <a href="#!">Anna Maria Doe</a></small>
           </p>
           <p class="text-neutral-500 dark:text-neutral-300">
@@ -42,6 +46,7 @@
           </p>
         </div>
       </div>
+      @endforeach
 
   
     </section>
