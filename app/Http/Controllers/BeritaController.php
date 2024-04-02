@@ -125,13 +125,36 @@ class BeritaController extends Controller
     }
     public function update(Request $request, $id_informasi)
     {
-        $validatedData = $request->validate([
-            'judul',
-            'isi',
-            'gambar',
+        $request->validate([
+            'judul_informasi' => 'required',
+            'nama_bibit' => 'required',
+            'tgl_awal' => 'required',
+            'tgl_akhir' => 'required',
+            'jumlah_bibit' => 'required',
+            'syarat_ketentuan' => 'required',
+            'kontak_narahubung' => 'required',
+            'gambar_informasi' => 'file|mimes:pdf,jpg,jpeg,svg,png',
         ]);
+    
+        $data = [
+            'judul_informasi' => $request->judul_informasi,
+            'nama_bibit' => $request->nama_bibit,
+            'tgl_awal' => $request->tgl_awal,
+            'tgl_akhir' => $request->tgl_akhir,
+            'jumlah_bibit' => $request->jumlah_bibit,
+            'syarat_ketentuan' => $request->syarat_ketentuan,
+            'kontak_narahubung' => $request->kontak_narahubung,
+        ];
+    
+        if ($request->hasFile('gambar_informasi')) {
+            $file = $request->file('gambar_informasi');
+            $nama_file = $file->getClientOriginalName();
+            $file->move('img', $nama_file);
+            $data['gambar_informasi'] = $nama_file;
+        };
+
         $update = MBerita::getById($id_informasi);
-        $update->update($validatedData);
+        $update->update($data);
         return redirect()->route('berita.list')
             ->with('success', 'Berita telah terpost');
     }
