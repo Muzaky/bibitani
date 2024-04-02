@@ -13,7 +13,7 @@
                     Informasi
                     Baru</span></a>
             <div class="flex flex-col overflow-x-auto">
-                <table class="table-auto min-w-full divide-y divide-gray-200">
+                <table class="table-auto min-w-full divide-y divide-gray-200 ">
                     <thead class="bg-white">
                         <tr>
                             <th scope="col"
