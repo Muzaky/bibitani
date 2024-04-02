@@ -46,7 +46,7 @@ class BeritaController extends Controller
             'jumlah_bibit' => 'required',
             'syarat_ketentuan' => 'required',
             'kontak_narahubung' => 'required',
-            // 'gambar_informasi' => 'file|mimes:pdf,jpg,jpeg,svg,png',
+            'gambar_informasi' => 'file|mimes:pdf,jpg,jpeg,svg,png',
         ]);
         // if ($request->hasFile('gambar_informasi')){
         //     $imagePath = $request->file('gambar_informasi')->store('informasi', 'public');
@@ -64,7 +64,7 @@ class BeritaController extends Controller
             ]);
         } else {
             $file = $request->file('gambar_informasi');
-            $nama_file = $request->judul_informasi . '.' . $file->extension();
+            $nama_file = $file->getClientOriginalName();
             $file->move('img', $nama_file);
             DB::table("informasi")->insert([
                 'judul_informasi' => $request->judul_informasi,

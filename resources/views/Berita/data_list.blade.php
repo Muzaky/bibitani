@@ -52,32 +52,35 @@
                         <?php $no = 1; ?>
                         @foreach ($data as $val)
                             <tr>
-                                <td class="tb-col tb-col-sm">
+                                <td class="tb-col tb-col-sm justify-center text-center">
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $no++ }}</div>
                                 </td>
-                                <td class="tb-col tb-col-md">
+                                <td class="tb-col tb-col-md justify-center text-center">
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $val->judul_informasi }}</div>
                                 </td>
-                                <td class="tb-col tb-col-md">
+                                <td class="tb-col tb-col-md justify-center text-center">
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $val->nama_bibit }}</div>
                                 </td>
-                                <td class="tb-col tb-col-md">
-                                    <div class=" px-2 py-1 fs-6 lh-sm"><img
-                                            src="{{ asset('img' . '/' . $val->gambar_informasi) }}" alt=""></div>
+                                <td class="tb-col tb-col-md justify-center text-center">
+                                    <div class=" px-2 py-1 fs-6 lh-sm object-fill   ">
+                                        {{-- <img --}}
+                                            {{-- src="{{ asset('img' . '/' . $val->gambar_informasi) }}" alt=""> --}}
+                                            {{ basename($val->gambar_informasi) }}
+                                        </div>
                                 </td>
-                                <td class="tb-col tb-col-md">
+                                <td class="tb-col tb-col-md justify-center text-center">
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $val->tgl_awal }}</div>
                                 </td>
-                                <td class="tb-col tb-col-md">
+                                <td class="tb-col tb-col-md justify-center text-center">
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $val->tgl_akhir }}</div>
                                 </td>
-                                <td class="tb-col tb-col-md">
+                                <td class="tb-col tb-col-md justify-center text-center">
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $val->jumlah_bibit }}</div>
                                 </td>
-                                <td class="tb-col tb-col-md">
+                                <td class="tb-col tb-col-md justify-center text-center">
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $val->syarat_ketentuan }}</div>
                                 </td>
-                                <td class="tb-col tb-col-md">
+                                <td class="tb-col tb-col-md justify-center text-center">
                                     <div class=" px-2 py-1 fs-6 lh-sm">{{ $val->kontak_narahubung }}</div>
                                 </td>
                                 <td class="tb-col tb-col-md px-6 py-4 flex gap-x-3">
@@ -110,7 +113,7 @@
                     </tbody>
             </div>
         </div>
-        <!--Modal Script-->
+        <!--Modal Script Delete Button-->
         <div id="delbutton"
             class="fixed left-0 top-0 bg-black bg-opacity-40 w-screen h-screen flex items-center justify-center opacity-0 hidden 
                  transition-opacity duration-500">
@@ -141,9 +144,8 @@
                 </div>
             </div>
         </div>
-        </div>
 
-
+        <!--Modal Script Edit Button-->
 
 
         <script>
