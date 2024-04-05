@@ -30,6 +30,14 @@ class BeritaController extends Controller
         );
     }
 
+    public function show($id){
+        $data = MBerita::getById($id);
+        return view(
+            'Berita.viewberita',
+            ['data' => $data]
+        );
+    }
+
     // public function show()
 
     public function create()
