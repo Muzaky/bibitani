@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('kecamatan', function (Blueprint $table) {
-            $table->id('id_kecamatan');
-            $table->string('nama_kecamatan');
+        Schema::create('pengajuan', function (Blueprint $table) {
+            $table->id('id_pengajuan');
+            $table->date('tanggal_pengajuan');
+            $table->string('berkas_pengajuan')->nullable();
+            $table->string('catatan_validasi')->nullable();
+            $table->string('status_validasi')->default('0');
             $table->timestamps();
             $table->softDeletes();
-        });
+            });
     }
 
     /**
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('kecamatan');
+        Schema::dropIfExists('pengajuan');
     }
 };
