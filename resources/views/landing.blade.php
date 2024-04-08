@@ -34,7 +34,7 @@
       </div>
       <div class=" lg:flex lg:flex-1 lg:justify-end">
         <a href="/login" class="flex justify-center text-sm font-semibold leading-6 text-gray-900 mx-8" style="font-size:20px; width: 128px; height:44px;background-color:#204E51; color:#f4f4f4; align-items: center;border-radius:8px">Login</a>
-        <a href="#" class="flex justify-center text-sm font-semibold leading-6 text-gray-900" style="font-size:20px; width: 128px; height:44px;background-color:#f4f4f4; color:#204E51; align-items: center;border-radius:8px; border :1px solid #204E51">Sign Up</a>
+        <a href="/register" class="flex justify-center text-sm font-semibold leading-6 text-gray-900" style="font-size:20px; width: 128px; height:44px;background-color:#f4f4f4; color:#204E51; align-items: center;border-radius:8px; border :1px solid #204E51">Register</a>
       </div>
     </nav>
     <div class="relative isolate px-6 lg:px-8 bg-cover h-screen" style="background-image: url(image_1.png); background-size: cover;background-repeat: no-repeat; max-height: 86vh;" >

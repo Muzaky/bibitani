@@ -20,10 +20,10 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('auth.login');
 });
 Route::get('/register', function () {
-    return view('register');
+    return view('auth.register');
 });
 
 Route::get('dashboard', [App\Http\Controllers\DinasController::class, 'index'])->name('dashboard'); 
