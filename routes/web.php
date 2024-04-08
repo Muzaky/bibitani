@@ -19,6 +19,12 @@ Route::get('/', function () {
     return view('landing');
 });
 
+Route::get('/login', function () {
+    return view('login');
+});
+Route::get('/register', function () {
+    return view('register');
+});
 
 Route::get('dashboard', [App\Http\Controllers\DinasController::class, 'index'])->name('dashboard'); 
 
@@ -38,7 +44,7 @@ Route::delete('berita_list/{id}', [App\Http\Controllers\BeritaController::class,
 //Routing Pengajuan
 
 
-Route::post('pengajuan/store', [C_Pengajuan::class, 'store'])->name('pengajuan.store');
+// Route::post('pengajuan/store', [C_Pengajuan::class, 'store'])->name('pengajuan.store');
 
 // Route::get('berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.list');
 // Route::get('landingdinas', [App\Http\Controllers\BeritaController::class, 'landing'])->name('berita.landing');

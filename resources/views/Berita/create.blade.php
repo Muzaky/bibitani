@@ -1,21 +1,56 @@
 @extends('Layout.dinas_nav')
 @section('content')
+    <style>
+        .input-with-dropdown {
+            position: relative;
+            width: 200px;
+        }
 
+        .input-with-dropdown input[type="text"] {
+            width: 100%;
+            padding-right: 20px;
+            /* To accommodate the dropdown arrow */
+        }
 
-<section class=" py-1  mt-4">
-    <div class="flex flex-col">
-        <div
-        class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
-        <div class="flex-auto px-4 lg:px-10 py-10 pt-0 ">
-            <form class="flex justify-center items-center flex-col" action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
-                    Tabel Informasi
-                </h6>
-                <div class="flex flex-wrap">
-                    <div class="w-full lg:w-6/12 px-4">
-                        <div class="relative w-full mb-3">
-                            <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-top: none;
+            display: none;
+        }
+
+        .dropdown.open {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+    <section class=" py-1  mt-4">
+        <div class="flex flex-col">
+            <div
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
+                <div class="flex-auto px-4 lg:px-10 py-10 pt-0 ">
+                    <form class="flex justify-center items-center flex-col" action="{{ route('berita.store') }}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+                            Tabel Informasi
+                        </h6>
+                        <div class="flex flex-wrap">
+                            <div class="w-full lg:w-6/12 px-4">
+                                <div class="relative w-full mb-3">
+                                    <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                                         htmlfor="grid-password">
                                         Judul Informasi
                                     </label>
@@ -108,5 +143,19 @@
                 </div>
             </div>
         </div>
+
+        <script>
+            const inputField = document.getElementById('nama_bibit');
+            const dropdown = document.getElementById('dropdown');
+
+            inputField.addEventListener('click', function() {
+                dropdown.classList.toggle('open');
+            });
+
+            function selectItem(item) {
+                inputField.value = item;
+                dropdown.classList.remove('open');
+            }
+        </script>
     </section>
 @endsection
